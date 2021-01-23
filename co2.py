@@ -130,7 +130,7 @@ fig
 
 
 """
-# Multivariable comparaison: CO2 emission VS PIB VS Demography
+# Multivariable comparison: CO2 emission VS PIB VS Demography
 ## First let's compare evolution of data for those variable
 """
 countries_comparaison = st.multiselect(
@@ -175,6 +175,7 @@ plt.legend()
 for pays in countries_comparaison:
     dataa = demo_data[demo_data['Country'] == pays]
     dataa['Nombre habitants (en milliers)'] = pd.to_numeric(dataa['Nombre habitants (en milliers)'])
+    dataa = dataa[dataa['Nombre habitants (en milliers)'] > 10000]
     plt.subplot(1,3,3,title = 'Demographie')
     plt.plot(pd.unique(dataa['Year']), dataa['Nombre habitants (en milliers)'], label = pays)
 
