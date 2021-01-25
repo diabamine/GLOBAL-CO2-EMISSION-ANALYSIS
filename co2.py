@@ -1,7 +1,7 @@
-!pip install matplotlib.pyplot
-!pip install pandas
-!pip install streamlit
-!pip install ploty
+pip install matplotlib
+pip install pandas
+pip install streamlit
+pip install ploty
 
 
 import streamlit as st
